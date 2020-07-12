@@ -8,10 +8,14 @@ struct node{
 };
 class data{
 private:
-	node *head,*current;
+	node *head,*current,*temp;
 
 public:
 	////////////////////////////////// code for insert node with first node ///////////////////////////////////////////////////////////////////////
+	data(){
+		head = current = temp = NULL;	
+	}
+	
 	void insert_first(){
 		if(head==NULL){
 			head = new node;
@@ -19,13 +23,14 @@ public:
 			cin>>head->info;
 			head->next = NULL;
 		}
-		else
+		else{
 			current = head;
 			current = new node;
 			cout<<"enter info :"<<endl;
 			cin>>current->info;
 			current->next = head;
 			head = current;
+		}
 	}
 	///////////////////////////code for insert node with last node/////////////////////////////////////////////////////////
 	void insert_last(){
@@ -76,7 +81,7 @@ public:
 	}
 }
 ///////////////////////////code for delete all nodes in which info equal to key /////////////////////////////////////////////////////////
-void del(){
+	void del(){
 		int key;
 		cout<<"Enter info to delete from the list"<<endl;
 		cin>>key;
@@ -121,10 +126,11 @@ void del(){
 
 	}
 };
-void main(){
+int main(){
 	data d;
 	d.insert_last();
 	d.insert_last();
 	d.print();
 	d.search();
+	return 0;
 }
