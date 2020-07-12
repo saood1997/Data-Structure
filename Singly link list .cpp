@@ -100,6 +100,7 @@ public:
 			}
 			temp = temp->next;
 		}
+	}
 	void search(){
 		int key;
 		cout<<"Enter key"<<endl;
@@ -110,7 +111,7 @@ public:
 				cout<<"found value :"<<endl;
 			}
 			else{
-				cout<<"not found"<<end;
+				cout<<"not found"<<endl;
 			}
 			current = current->next;
 		}
